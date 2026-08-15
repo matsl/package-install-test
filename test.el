@@ -4,5 +4,5 @@
 
 (ert-deftest test-package-install ()
   "Test package install."
-  (package-refresh-contents)
+  ;; (package-refresh-contents)
   (package-install 'markdown-mode))
