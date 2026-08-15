@@ -2,6 +2,12 @@
 
 (require 'ert)
 
+(ert-deftest test-a ()
+  "."
+  (require 'package)
+  (unless package--initialized
+    (package-initialize)))
+
 (ert-deftest test-package-install ()
   "Test package install."
   ;; (package-refresh-contents)
