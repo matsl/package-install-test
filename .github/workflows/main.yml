@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: [30.2, master]
+    container: silex/emacs:${{ matrix.version }}-ci
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Test
+        run: make test
