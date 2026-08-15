@@ -5,8 +5,7 @@
 (ert-deftest test-a ()
   "."
   (require 'package)
-  (unless package--initialized
-    (package-initialize)))
+  (package-initialize))
 
 (ert-deftest test-package-install ()
   "Test package install."
